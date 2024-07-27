@@ -1,0 +1,52 @@
+<div class="container">
+    <div style="width:1000px; margin: auto ; padding:10px ; background-color: bisque;">
+        <h2>Xin chào {{$customer->name}}</h2>
+        <p>Email dưới đây là thông tin đơn hàng quý khách đã thực hiện giao dịch tại website</p>
+        <p>Quý khách kiểm tra thông tin và xác nhận lại đơn hàng bằng cách <b> Nhấn vào nút xác nhận </b> </p>
+        <h4>Thông tin đơn hàng </h4>
+        <table border="1" cellspacing="0" cellpadding="5" width="100%">
+            <tr>
+                <td> Mã đơn hàng</td>
+                <td>Ngày đặt</td>
+                <td>Tổng tiền </td>
+                <td>Trạng thái</td>
+                <td width="100px"></td>
+
+            </tr>
+
+            <tr>
+                <td>#{{$order->id}} </td>
+                <td>{{$order->created_at->format('d/m/Y h:i:s')}} </td>
+                <td>{{number_format($order->total)}} vnđ </td>
+                <td>Chờ duyệt</td>
+                <td>
+                    <a href="{{ route('order-verify',$order->token) }}"
+                        style="display:inline-block;text-decoration: none; color: #fff; font-weight: bold; padding: 5px 15px; background-color: green;">Xác
+                        nhận</a>
+                </td>
+            </tr>
+        </table>
+        <h4>Chi tiết đơn hàng</h4>
+        <table border="1" cellspacing="0" cellpadding="5" width="100%">
+            <tr>
+                <td> STT</td>
+                <td>Bìa sách</td>
+                <td>Tên sách</td>
+                <td>Giá</td>
+                <td>Số lượng</td>
+                <td>Thành tiền</td>
+
+            </tr>
+
+            <tr>
+                <td> STT</td>
+                <td>Bìa sách</td>
+                <td>Tên sách</td>
+                <td>Giá</td>
+                <td>Số lượng</td>
+                <td>Thành tiền</td>
+
+            </tr>
+        </table>
+    </div>
+</div>
